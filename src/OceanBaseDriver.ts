@@ -5,6 +5,7 @@ import {
 import mysql, { Connection, ConnectionConfig, FieldInfo, QueryOptions } from 'mysql';
 import genericPool from 'generic-pool';
 import { promisify } from 'util';
+import {OceanBaseQuery} from  './OceanBaseQuery'
 import {
   BaseDriver,
   GenericDataBaseType,
@@ -82,6 +83,9 @@ export class OceanBaseDriver extends BaseDriver implements DriverInterface {
     return 2;
   }
 
+  public static dialectClass() {
+    return OceanBaseQuery;
+  }
   protected readonly config: OceanBaseDriverConfiguration;
 
   protected readonly pool: genericPool.Pool<OceanBaseConnection>;

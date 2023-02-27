@@ -20,6 +20,7 @@ class OceanBaseFilter extends BaseFilter {
   }
 }
 
+
 export class OceanBaseQuery extends BaseQuery {
   newFilter(filter) {
     return new OceanBaseFilter(this, filter);
